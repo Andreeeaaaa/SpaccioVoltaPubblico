@@ -31,7 +31,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", "spaccio.voltaweb.it", env('EXTERNAL_HOSTNAME')]
+ALLOWED_HOSTS = ["spacciovoltapubblico-app-app-0fb322a2a653f4add-jyuoewwbkq-uc.a.run.app", "127.0.0.1", "0.0.0.0", "spaccio.voltaweb.it", env('EXTERNAL_HOSTNAME')]
 
 
 # Application definition
