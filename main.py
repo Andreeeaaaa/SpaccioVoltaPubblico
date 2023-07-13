@@ -4,7 +4,8 @@ import os
 import sys
 
 from django.core.management.commands.runserver import Command as runserver; 
-
+from django.core.management.commands.makemigrations import Command as makemigrations;
+from django.core.management.commands.migrate import Command as migrate;
 
 def main():
     """Run administrative tasks."""
@@ -23,5 +24,9 @@ def main():
 if __name__ == '__main__':
     runserver.default_addr = '0.0.0.0'
     runserver.default_port = os.getenv('PORT', 3000)
+    makemigrations.execute(args='SezioneSpaccio')
+    makemigrations.execute(args='users')
+    migrate.execute(args='SezioneSpaccio')
+    migrate.execute(args='users')
     main()
     
