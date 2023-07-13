@@ -25,9 +25,9 @@ def main():
 if __name__ == '__main__':
     runserver.default_addr = '0.0.0.0'
     runserver.default_port = os.getenv('PORT', 3000)
-    makemigrations.execute(makemigrations, args='SezioneSpaccio')
-    makemigrations.execute(makemigrations, args='users')
-    migrate.execute(migrate, args='SezioneSpaccio')
-    migrate.execute(migrate, args='users')
+    ManagementUtility(['makemigrations', 'SezioneSpaccio']).execute()
+    ManagementUtility(['makemigrations', 'users']).execute()
+    ManagementUtility(['migrate', 'SezioneSpaccio']).execute()
+    ManagementUtility(['migrate', 'users']).execute()
     main()
     
