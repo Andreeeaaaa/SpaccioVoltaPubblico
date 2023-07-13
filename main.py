@@ -21,6 +21,7 @@ def main():
 
 
 if __name__ == '__main__':
+    runserver.default_addr = '0.0.0.0'
     runserver.default_port = os.getenv('PORT', 3000)
     main()
     

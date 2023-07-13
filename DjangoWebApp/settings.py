@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", "spaccio.voltaweb.it", env('EXTERNAL_HOSTNAME')]
+ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", "spaccio.voltaweb.it", env('EXTERNAL_HOSTNAME')]
 
 
 # Application definition
@@ -74,6 +74,7 @@ MIDDLEWARE = [
 
 INTERNAL_IPS = [
     '127.0.0.1',
+    '0.0.0.0',
 ]
 
 ROOT_URLCONF = 'DjangoWebApp.urls'
