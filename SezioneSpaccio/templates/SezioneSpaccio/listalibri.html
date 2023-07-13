@@ -1,0 +1,39 @@
+{% extends "SezioneSpaccio/base.html" %} 
+{% block content %} 
+{% load auth_extras %}
+{% load static %}
+<div>
+    <h1>Libri di {{ view.kwargs.materia }}</h1>
+    
+    <div class="grid-libri">
+        {% for libro in libri %}
+        <div>
+            {% if libro.recapito_mail == user.profile %}
+                <div>
+                    <a class="btn btn-warning" href="{% url 'libro-update' libro.id %}">Modifica</a>
+                    <a class="btn btn-danger" href="{% url 'libro-delete' libro.id %}">Elimina</a>
+                </div>
+            {% endif %}
+            <a href="{% url 'libro-detail-page' libro.id %}">
+                <div>
+                    <h2>{{libro.name}}</h2>
+                    <p>
+                        <span class="scritta_blu">ISBN:</span>
+                        <span class="scritta_bianca">{{libro.isbn}}</span>
+                    </p>
+                    <p>
+                        <span class="scritta_blu">Prezzo:</span>
+                        <span class="scritta_bianca">{{libro.prezzo}}€</span>
+                    </p>
+                    <p>
+                        <span class="scritta_blu">Condizioni:</span>
+                        <span class="scritta_bianca">{{libro.condizioni}}</span>
+                    </p>
+                </div>
+            </a>
+        </div>
+        
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

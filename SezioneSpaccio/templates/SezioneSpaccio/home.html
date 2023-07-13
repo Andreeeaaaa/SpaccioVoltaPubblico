@@ -1,0 +1,46 @@
+{% extends "SezioneSpaccio/base.html" %} 
+{% block content %}
+{% load static %}
+<div>
+    <h1>Sezione Spaccio</h1>
+    
+    <div class="grid-materie">
+        <a href="{% url 'libro-list-page' 'Arte' %}">
+            <img src="{% static 'icons/arte.png' %}" alt="">
+        </a>
+        <a href="{% url 'libro-list-page' 'Filosofia' %}">
+            <img src="{% static 'icons/filosofia.png' %}" alt="" >
+        </a>
+        <a href="{% url 'libro-list-page' 'Fisica' %}">
+            <img src="{% static 'icons/fisica.png' %}" alt="">
+        </a>
+        <a href="{% url 'libro-list-page' 'Francese' %}">
+            <img src="{% static 'icons/francese.png' %}" alt="">
+        </a>
+        <a href="{% url 'libro-list-page' 'Inglese' %}">
+            <img src="{% static 'icons/inglese.png' %}" alt="">
+        </a>
+        <a href="{% url 'libro-list-page' 'Italiano' %}">
+            <img src="{% static 'icons/italiano.png' %}" alt="">
+        </a>
+        <a href="{% url 'libro-list-page' 'Latino' %}">
+            <img src="{% static 'icons/latino.png' %}" alt="">
+        </a>
+        <a href="{% url 'libro-list-page' 'Matematica' %}">
+            <img src="{% static 'icons/matematica.png' %}" alt="">
+        </a>
+        <a href="{% url 'libro-list-page' 'Motoria' %}">
+            <img src="{% static 'icons/motoria.png' %}" alt="">
+        </a>
+        <a href="{% url 'libro-list-page' 'Scienze' %}">
+            <img src="{% static 'icons/scienze.png' %}" alt="">
+        </a>
+        <a href="{% url 'libro-list-page' 'Storia' %}">
+            <img src="{% static 'icons/storia.png' %}" alt="">
+        </a>
+        <a href="{% url 'libro-list-page' 'Tedesco' %}">
+            <img src="{% static 'icons/tedesco.png' %}" alt="">
+        </a>
+    </div>
+</div>
+{% endblock content %}

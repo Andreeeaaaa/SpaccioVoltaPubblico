@@ -1,0 +1,38 @@
+{% extends "SezioneSpaccio/base.html" %} 
+{% block content %} 
+{% load auth_extras %}
+{% load static %}
+<h1>{{object.name}}</h1>
+<div class='grid-libro'>
+    <div>
+        <p>
+            <span class="scritta_blu">ISBN:</span>
+            <span>{{libro.isbn}}</span>
+        </p>
+        <p>
+            <span class="scritta_blu">Prezzo:</span>
+            <span>{{libro.prezzo}}</span>
+        </p>
+        <p>
+            <span class="scritta_blu">Condizioni:</span>
+            <span>{{libro.condizioni}}</span>
+        </p>
+        <p>
+            <span class="scritta_blu">Anno/i:</span>
+            <span>{{libro.anno}}</span>
+        </p>
+        <p>
+            <span class="scritta_blu">E' stata attività l'area digitale:</span>
+            <span>{{libro.area_digitale}}</span>
+        </p>
+    </div>
+    <a
+        href="{% url 'compra-libro' libro.id %}"
+        type="button"
+        class="h btn btn-primary btn-block bottone"
+    >
+        <div class="scritta-bottone">Compra</div>
+    </a>
+    
+</div>
+{% endblock content %}

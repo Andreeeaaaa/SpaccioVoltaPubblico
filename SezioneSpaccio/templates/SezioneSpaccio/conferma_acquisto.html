@@ -1,0 +1,19 @@
+{% extends "SezioneSpaccio/base.html" %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Conferma Acquisto del libro: {{ libro.name }} (ISBN: {{ libro.isbn }})</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn" btn-outline-info type="submit">
+                Conferma Acquisto
+            </button>
+            <small>Manderemo una email automatica all'indirizzo del venditore includendo la tua email nel messaggio, così che si possa mettere in contatto direttamente con te!</small>
+        </div>
+    </form>
+</div>
+{% endblock content %}

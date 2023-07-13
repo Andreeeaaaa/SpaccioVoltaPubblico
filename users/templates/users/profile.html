@@ -1,0 +1,23 @@
+{% extends "SezioneSpaccio/base.html" %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<div class="content-section">
+    <div class="media">
+        <div class="media-body">
+            <h2 class="account-heading">Username: {{ user.username }}</h2>
+            <p class="text-secondary">Email: {{ user.email }}</p>
+        </div>
+    </div>
+    <!-- Form to update the profile. Add the enctype to deal with the image, it won't be saved otherwise -->
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Informazioni</legend>
+            {{ u_form|crispy }} {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn" btn-outline-info type="submit">Cambia Informazioni</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

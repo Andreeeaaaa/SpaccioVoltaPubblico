@@ -1,0 +1,25 @@
+{% extends "SezioneSpaccio/base.html" %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Log In</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn" btn-outline-info type="submit">Log In</button>
+            <small class="text-muted ml-2">
+                <a href="{% url 'password_reset' %}">Password Dimenticata?</a>
+            </small>
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Non hai un account? <a class="ml-2" href="/register">Crea Account</a>
+        </small>
+    </div>
+</div>
+{% endblock content %}
+<!-- Django redirects users to the user page by default, change it in the settings file -->
