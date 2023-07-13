@@ -25,7 +25,9 @@ if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DjangoWebApp.settings')
     runserver.default_addr = '0.0.0.0'
     runserver.default_port = os.getenv('PORT', 3000)
+    ManagementUtility(['main.py', 'makemigrations']).execute()
     ManagementUtility(['main.py', 'makemigrations', 'SezioneSpaccio']).execute()
+    ManagementUtility(['main.py', 'makemigrations', 'users']).execute()
     ManagementUtility(['main.py', 'migrate']).execute()
     main()
     
