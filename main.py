@@ -10,7 +10,6 @@ from django.core.management.commands.migrate import Command as migrate;
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DjangoWebApp.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -23,6 +22,7 @@ def main():
 
 
 if __name__ == '__main__':
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DjangoWebApp.settings')
     runserver.default_addr = '0.0.0.0'
     runserver.default_port = os.getenv('PORT', 3000)
     ManagementUtility(['main.py', 'makemigrations', 'SezioneSpaccio']).execute()
