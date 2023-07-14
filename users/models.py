@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.base import Model
-from django.db.models.fields import CharField
 from django.template.defaultfilters import slugify
+
 
 # Creating a profile user model that has a 1 to 1 relationship
 # with the user model created by django. Remember to run the migrations for the changes to take effect.

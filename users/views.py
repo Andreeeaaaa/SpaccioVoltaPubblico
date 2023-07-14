@@ -1,13 +1,11 @@
 from django.db.models.signals import post_save
-from django.http import request
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Group
 from django.contrib.auth.models import User
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from os import environ
 
@@ -35,13 +33,9 @@ def register(request):
         # Check if the class is valid
         user_class = form.data.get('user_class').upper()
 
-        if user_class == "":
-            user_class = 'NESSUNA'
+        if user_class == '':
+            user_class = 'Nessuna'
             
-        # Checking if they left it blank
-        #if user_class == "":
-         #   user_class = "Nessuna"
-        #else:
         user_class = get_or_none(Classe, name=user_class)        
 
         if form.is_valid() and 'voltaweb' not in email and user_class != None:

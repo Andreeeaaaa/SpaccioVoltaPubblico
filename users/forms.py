@@ -12,8 +12,8 @@ from .models import Profile
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField(required = True)
-    nome = forms.CharField(max_length=40)
-    cognome = forms.CharField(max_length=40)
+    nome = forms.CharField(max_length=40, required=False)
+    cognome = forms.CharField(max_length=40, required=False)
     user_class = forms.CharField(max_length=2, label='Classe', required=False, help_text='Se non sei di nessuna classe, lascia il campo vuoto.')
 
     class Meta:
